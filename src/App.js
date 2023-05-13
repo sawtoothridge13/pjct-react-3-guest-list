@@ -30,8 +30,14 @@ const deletedGuest = await response.json(); */
         <h1>Guest List App</h1>
       </header>
       <form>
-        <input className={styles.input} />
-        <input></input>
+        <label>
+          First name
+          <input />
+        </label>
+        <label>
+          Last name
+          <input />
+        </label>
       </form>
     </div>
   );
