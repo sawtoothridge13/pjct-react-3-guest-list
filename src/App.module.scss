@@ -1,6 +1,15 @@
 .App {
   background-color: aliceblue;
-  display: flex;
+  display: flex-box;
+  justify-content: center;
+  align-items: center;
+  height: 300;
+  width: 400;
+}
+
+.section {
+  background-color: aliceblue;
+  display: flex-box;
   justify-content: center;
   align-items: center;
   height: 300;
