@@ -2,38 +2,37 @@ import { useState } from 'react';
 import styles from './App.module.scss';
 
 export default function App() {
-  const [label, setLabel] = useState('');
-  // 1. Create the state variable
-  const [usernameInput, setUsernameInput] = useState('');
+  /*   const baseUrl = 'http://localhost:4000';
+  const response = await fetch(`${baseUrl}/guests`);
+  const allGuests = await response.json();
+  const response = await fetch(`${baseUrl}/guests`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ firstName: 'Karl', lastName: 'Horky' }),
+  });
+  const createdGuest = await response.json();
+  const response = await fetch(`${baseUrl}/guests/1`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ attending: true }),
+  });
+  const updatedGuest = await response.json();
+  const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
+const deletedGuest = await response.json(); */
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-      }}
-    >
-      {/* Boolean operator */}
-      {label !== '' && <p>Username: {label}</p>}
-      {/* 2. Connect the state with the input value */}
-      <input
-        value={usernameInput}
-        onChange={(event) => {
-          // 3. update state on change event
-          setUsernameInput(event.currentTarget.value);
-        }}
-      />
-      {/* Ternary operator */}
-      {usernameInput === '' ? (
-        ' please type ⌨️'
-      ) : (
-        <button
-          onClick={() => {
-            setLabel(usernameInput);
-          }}
-        >
-          update label
-        </button>
-      )}
-    </form>
+    <div className={styles.App}>
+      <header>
+        <h1>Guest List App</h1>
+      </header>
+      <form>
+        <input className={styles.input} />
+        <input></input>
+      </form>
+    </div>
   );
 }
