@@ -1,6 +1,48 @@
 import { Fragment, useEffect, useState } from 'react';
 import styles from './App.module.scss';
 
+// Create state variables
+const [guestList, setGuestList] = useState([]);
+const [firstName, setFirstName] = useState('');
+const [lastName, setLastName] = useState('');
+const [loading, setLoading] = useState('');
+
+// Base URL
+const baseUrl = 'http://localhost:4000';
+
+// Getting all guests (aka GET /guests)
+const response = await fetch(`${baseUrl}/guests`);
+
+const allGuests = await response.json();
+
+// Getting a single guest (aka GET /guests/:id)
+const response = await fetch(`${baseUrl}/guests/:id`);
+const guest = await response.json();
+
+// Creating a new guest (aka POST /guests)
+const response = await fetch(`${baseUrl}/guests`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ firstName: 'Karl', lastName: 'Horky' }),
+});
+const createdGuest = await response.json();
+
+// Updating a guest (aka PUT /guests/:id)
+const response = await fetch(`${baseUrl}/guests/1`, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ attending: true }),
+});
+const updatedGuest = await response.json();
+
+// Deleting a guest (aka DELETE /guests/:id)
+const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
+const deletedGuest = await response.json();
+
 export default function App() {}
 /*   // 1. Create state for input data checkbox
   const [attendingStatus, setAttendingStatus] = useState(false);
