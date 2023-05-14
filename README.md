@@ -4,7 +4,7 @@
 
 Create a guest list app using React that allows for:
 
-- [ ] Adding a guest using separate first name and last name fields
+- [x] Adding a guest using separate first name and last name fields
 
   - [x] The first name input needs to have a related label containing `First name`
   - [x] The last name input needs to have a related label containing `Last name`
