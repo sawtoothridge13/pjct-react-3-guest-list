@@ -2,15 +2,15 @@ import { Fragment, useEffect, useState } from 'react';
 import styles from './App.module.scss';
 
 // Create state variables
-const [guestList, setGuestList] = useState([]);
+/* const [guestList, setGuestList] = useState([]);
 const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
-const [loading, setLoading] = useState('');
+const [loading, setLoading] = useState(''); */
 
 // Base URL
 const baseUrl = 'http://localhost:4000';
 
-// Getting all guests (aka GET /guests)
+/* // Getting all guests (aka GET /guests)
 const response = await fetch(`${baseUrl}/guests`);
 
 const allGuests = await response.json();
@@ -41,9 +41,28 @@ const updatedGuest = await response.json();
 
 // Deleting a guest (aka DELETE /guests/:id)
 const response = await fetch(`${baseUrl}/guests/1`, { method: 'DELETE' });
-const deletedGuest = await response.json();
+const deletedGuest = await response.json(); */
 
-export default function App() {}
+export default function App() {
+  return (
+    <div className={styles.App}>
+      <main>
+        <header>Guest List</header>
+        <div>
+          <label>
+            First name
+            <input />
+          </label>
+          <label>
+            Last name
+            <input />
+          </label>
+        </div>
+        <div>Guests</div>
+      </main>
+    </div>
+  );
+}
 /*   // 1. Create state for input data checkbox
   const [attendingStatus, setAttendingStatus] = useState(false);
   const [firstName, setFirstName] = useState('false');
